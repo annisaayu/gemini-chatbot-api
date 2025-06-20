@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.chat-box {
+  height: 400px;
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fafafa;
+  margin-bottom: 10px;
+}
+
+.message {
+  margin: 8px 0;
+  padding: 8px 12px;
+  border-radius: 20px;
+  max-width: 80%;
+  display: inline-block;
+}
+
+.message.user {
+  background-color: #d1e7ff;
+  float: right;
+  text-align: right;
+}
+
+.message.bot {
+  background-color: #dff6dd;
+  float: left;
+  text-align: left;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #0d6efd;
+  color: white;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0b5ed7;
+}
+
+/* Styling for code blocks within bot messages - with horizontal scroll */
+.message.bot pre {
+  position: relative; /* Needed for absolute positioning of the copy button */
+  white-space: pre; /* Preserves whitespace, allows horizontal scrolling */
+  overflow-x: auto; /* Add horizontal scrollbar if content overflows */
+  background-color: #f6f8fa; /* Optional: slightly different background for <pre> */
+  padding: 10px;      /* Optional: padding inside the <pre> tag */
+  padding-top: 30px; /* Add some space at the top for the button */
+  border-radius: 5px; /* Optional: rounded corners for the <pre> tag */
+}
+
+.copy-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background-color: #6c757d; /* A neutral dark gray */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.7; /* Slightly transparent initially */
+  transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.message.bot pre:hover .copy-btn {
+  opacity: 1; /* Fully visible on hover of the pre block */
+}
+.copy-btn:hover {
+  background-color: #5a6268; /* Darken on hover */
+}
+.copy-btn.copied {
+  background-color: #28a745; /* Green for success */
+  opacity: 1;
+}
+
